@@ -3,301 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickPro Waterproof - Premium Waterproofing & Construction Services</title>
+    <title>QuickPro Waterproof - Your Trusted Partner in Waterproofing & Construction</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+        .hero-video {
+            filter: brightness(0.4);
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(59,130,246,0.85) 50%, rgba(6,182,212,0.8) 100%);
-        }
-        
         .glass-effect {
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
-        
         .gradient-bg {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
         }
-        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
         .mobile-menu {
             transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s ease-in-out;
         }
-        
         .mobile-menu.active {
             transform: translateX(0);
         }
-        
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.6s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            transform: perspective(1000px) rotateX(0deg);
-        }
-        
         .service-card:hover {
-            transform: perspective(1000px) rotateX(10deg) translateY(-8px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
         }
-        
-        .portfolio-card {
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-card img {
-            transition: transform 0.5s ease;
-        }
-        
         .portfolio-card:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
-        
-        .portfolio-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .portfolio-card:hover::before {
-            opacity: 1;
-        }
-        
-        .portfolio-card .portfolio-content {
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-card:hover .portfolio-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
         .ai-thinking {
             animation: pulse 2s infinite;
         }
-        
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .btn-hover-effect {
-            transition: all 0.3s ease;
-            transform: translateY(0);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-hover-effect:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .input-focus-effect:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-        
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .counter-item {
-            transition: all 0.3s ease;
-        }
-        
-        .counter-item:hover {
-            transform: scale(1.05);
-        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="scroll-smooth">
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 transition-all duration-300" id="header">
-        <nav class="glass-effect px-6 py-3">
+        <nav class="glass-effect px-6 py-4">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="p-2 bg-blue-600 rounded-lg">
-                        <i class="fas fa-hard-hat text-xl text-white"></i>
-                    </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-hard-hat text-2xl text-blue-400"></i>
                     <span class="text-xl font-bold text-white">QuickPro Waterproof</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#services" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        Services
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#portfolio" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        Portfolio
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#assistant" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        AI Assistant
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#about" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        About
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#contact" class="text-white hover:text-blue-300 transition-colors font-medium relative group">
-                        Contact
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-blue-300 transition-colors">Home</a>
+                    <a href="#services" class="text-white hover:text-blue-300 transition-colors">Services</a>
+                    <a href="#portfolio" class="text-white hover:text-blue-300 transition-colors">Portfolio</a>
+                    <a href="#assistant" class="text-white hover:text-blue-300 transition-colors">AI Assistant</a>
+                    <a href="#about" class="text-white hover:text-blue-300 transition-colors">About</a>
+                    <a href="#contact" class="text-white hover:text-blue-300 transition-colors">Contact</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-white text-2xl focus:outline-none" id="mobile-menu-btn">
+                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </nav>
         
         <!-- Mobile Menu -->
-        <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-40 md:hidden flex items-center justify-center" id="mobile-menu">
+        <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-40 md:hidden" id="mobile-menu">
             <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#home" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    Home
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#services" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    Services
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#portfolio" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    Portfolio
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#assistant" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    AI Assistant
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#about" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    About
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#contact" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link relative group">
-                    Contact
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <button class="absolute top-6 right-6 text-white text-2xl focus:outline-none" id="close-mobile-menu">
-                    <i class="fas fa-times"></i>
-                </button>
+                <a href="#home" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">Home</a>
+                <a href="#services" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">Services</a>
+                <a href="#portfolio" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">Portfolio</a>
+                <a href="#assistant" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">AI Assistant</a>
+                <a href="#about" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">About</a>
+                <a href="#contact" class="text-white text-2xl hover:text-blue-300 transition-colors mobile-link">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 w-full h-full">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                 alt="Modern Construction" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-        
-        <div class="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in animate__animated animate__fadeInDown">
-                Premium <span class="text-blue-300">Waterproofing</span> &<br>
-                <span class="text-blue-300">Construction</span> Solutions
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover hero-video">
+            <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">
+                Your Trusted Partner in<br>
+                <span class="text-blue-400">Waterproofing & Construction</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto fade-in animate__animated animate__fadeIn animate__delay-1s">
+            <p class="text-xl md:text-2xl mb-8 opacity-90 fade-in">
                 Professional waterproofing, construction, and renovation services in Pretoria. 
                 Quality work, reliable service, exceptional results.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in animate__animated animate__fadeIn animate__delay-2s">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all btn-hover-effect">
-                    Get a Free Quote
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                    Call Out Fee: R450
                 </a>
-                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all btn-hover-effect">
-                    Explore Services
+                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                    Our Services
                 </a>
-            </div>
-            
-            <div class="absolute bottom-10 left-0 right-0 flex justify-center">
-                <a href="#services" class="text-white animate-bounce">
-                    <i class="fas fa-chevron-down text-2xl"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="counter-item bg-gray-50 p-6 rounded-lg text-center">
-                    <div class="text-4xl font-bold text-blue-600 mb-2" data-count="250">0</div>
-                    <div class="text-gray-600">Projects Completed</div>
-                </div>
-                <div class="counter-item bg-gray-50 p-6 rounded-lg text-center">
-                    <div class="text-4xl font-bold text-blue-600 mb-2" data-count="15">0</div>
-                    <div class="text-gray-600">Years Experience</div>
-                </div>
-                <div class="counter-item bg-gray-50 p-6 rounded-lg text-center">
-                    <div class="text-4xl font-bold text-blue-600 mb-2" data-count="98">0</div>
-                    <div class="text-gray-600">Satisfied Clients</div>
-                </div>
-                <div class="counter-item bg-gray-50 p-6 rounded-lg text-center">
-                    <div class="text-4xl font-bold text-blue-600 mb-2" data-count="50">0</div>
-                    <div class="text-gray-600">Expert Team</div>
-                </div>
             </div>
         </div>
     </section>
@@ -306,311 +119,110 @@
     <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <span class="text-blue-600 font-semibold mb-2 inline-block">OUR SERVICES</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Comprehensive Construction Solutions</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    From waterproofing to complete construction, we offer comprehensive solutions for all your building needs.
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From waterproofing to residential construction, we offer comprehensive solutions for all your building needs.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-tint text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Professional Waterproofing</h3>
-                    <p class="text-gray-600">
-                        Comprehensive waterproofing solutions for roofs, basements, and all wet areas to protect your property from water damage.
-                    </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-paint-brush text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Painting</h3>
                 </div>
-                
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-paint-roller text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Interior & Exterior Painting</h3>
-                    <p class="text-gray-600">
-                        High-quality painting services using premium paints and techniques to enhance and protect your property's surfaces.
-                    </p>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Ceiling Replacements</h3>
                 </div>
-                
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-home text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Ceiling Replacements</h3>
-                    <p class="text-gray-600">
-                        Expert ceiling repair and replacement services to restore your interior spaces to their original condition.
-                    </p>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-spray-can text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">High Pressure Cleaning</h3>
                 </div>
-                
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-spray-can text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">High Pressure Cleaning</h3>
-                    <p class="text-gray-600">
-                        Professional cleaning services to remove dirt, grime, and stains from driveways, walls, roofs, and other surfaces.
-                    </p>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Roof Painting</h3>
                 </div>
-                
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-layer-group text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Epoxy Floor Coatings</h3>
-                    <p class="text-gray-600">
-                        Durable and attractive epoxy floor coatings for garages, warehouses, and commercial spaces.
-                    </p>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-tint text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Waterproofing</h3>
                 </div>
-                
-                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-tools text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Complete Construction</h3>
-                    <p class="text-gray-600">
-                        Full-service construction solutions from planning to completion for residential and commercial projects.
-                    </p>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Roof Repairs</h3>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all btn-hover-effect">
-                    Get Custom Solution
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <div class="relative rounded-xl overflow-hidden shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                             alt="Construction Team" 
-                             class="w-full h-auto rounded-xl">
-                        <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg shadow-xl w-2/3">
-                            <div class="text-3xl font-bold">15+</div>
-                            <div class="text-lg">Years Experience</div>
-                        </div>
-                    </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-sync-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Replacements</h3>
                 </div>
-                
-                <div class="fade-in">
-                    <span class="text-blue-600 font-semibold mb-2 inline-block">WHY CHOOSE US</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Excellence in Every Project</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-blue-600"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Quality Materials</h3>
-                                <p class="text-gray-600">We use only premium materials from trusted suppliers to ensure durability and longevity.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-blue-600"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Skilled Professionals</h3>
-                                <p class="text-gray-600">Our team consists of certified and experienced professionals dedicated to excellence.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-blue-600"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Timely Completion</h3>
-                                <p class="text-gray-600">We respect your time and complete projects within agreed timelines without compromising quality.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-blue-600"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Competitive Pricing</h3>
-                                <p class="text-gray-600">We offer fair and transparent pricing with no hidden costs.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-layer-group text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Epoxy Floor Coatings</h3>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Residential Construction</h3>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-wrench text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Plumbing</h3>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                    <i class="fas fa-truck text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900">Service Supply</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
+    <section id="portfolio" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <span class="text-blue-600 font-semibold mb-2 inline-block">OUR WORK</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Recent Projects</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Take a look at some of our recent projects showcasing our expertise and quality workmanship.
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Take a look at some of our recent residential projects showcasing our expertise and quality workmanship.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Modern House Construction" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Modern House Construction</h3>
-                        <p class="text-blue-100">Complete construction of a contemporary family home in Pretoria</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="portfolio-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="overflow-hidden">
+                        <img src="south-african-house-1.jpg" alt="Residential Waterproofing" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Residential Waterproofing</h3>
+                        <p class="text-gray-600">Waterproofing solution for a family home in Pretoria.</p>
                     </div>
                 </div>
                 
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Commercial Waterproofing" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Commercial Waterproofing</h3>
-                        <p class="text-blue-100">Waterproofing solution for a multi-story office building</p>
+                <div class="portfolio-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="overflow-hidden">
+                        <img src="south-african-house-2.jpg" alt="House Roof Repair" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">House Roof Repair</h3>
+                        <p class="text-gray-600">Complete roof repair and sealing for a residential property.</p>
                     </div>
                 </div>
                 
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Industrial Epoxy Flooring" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Industrial Epoxy Flooring</h3>
-                        <p class="text-blue-100">Durable epoxy coating for a high-traffic factory floor</p>
+                <div class="portfolio-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="overflow-hidden">
+                        <img src="south-african-house-3.jpg" alt="Residential Epoxy Flooring" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Residential Epoxy Flooring</h3>
+                        <p class="text-gray-600">Durable epoxy floor coating for a home garage.</p>
                     </div>
                 </div>
                 
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Exterior Renovation" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Exterior Renovation</h3>
-                        <p class="text-blue-100">Complete exterior makeover for a residential property</p>
+                <div class="portfolio-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="overflow-hidden">
+                        <img src="south-african-house-4.jpg" alt="Exterior Renovation" class="w-full h-48 object-cover">
                     </div>
-                </div>
-                
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Roof Repair" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Roof Repair & Painting</h3>
-                        <p class="text-blue-100">Complete roof restoration and protective coating</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Exterior Renovation</h3>
+                        <p class="text-gray-600">Painting and high-pressure cleaning for a residential property.</p>
                     </div>
-                </div>
-                
-                <div class="portfolio-card relative rounded-xl overflow-hidden h-80">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                         alt="Interior Design" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10 portfolio-content">
-                        <h3 class="text-xl font-semibold mb-2">Interior Ceiling Replacement</h3>
-                        <p class="text-blue-100">Modern ceiling design and installation</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all btn-hover-effect">
-                    View More Projects
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <span class="text-blue-600 font-semibold mb-2 inline-block">CLIENT FEEDBACK</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Don't just take our word for it - hear from our satisfied customers.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D." class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">John D.</h4>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "QuickPro completely transformed our leaking roof. Their team was professional, efficient, and the results exceeded our expectations. No more water damage after heavy rains!"
-                    </p>
-                </div>
-                
-                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah M." class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Sarah M.</h4>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "The epoxy flooring in our garage looks amazing and has held up perfectly against heavy use. The team was clean, professional, and completed the job ahead of schedule."
-                    </p>
-                </div>
-                
-                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="David T." class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">David T.</h4>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "We hired QuickPro for a complete home renovation. Their attention to detail and quality craftsmanship is exceptional. They turned our outdated house into a modern dream home."
-                    </p>
                 </div>
             </div>
         </div>
@@ -620,14 +232,13 @@
     <section id="assistant" class="py-20 gradient-bg">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <span class="text-blue-200 font-semibold mb-2 inline-block">SMART SOLUTION</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">AI Service Assistant</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">AI Service Assistant</h2>
                 <p class="text-xl text-blue-100 max-w-3xl mx-auto">
                     Describe your construction or waterproofing problem, and our AI will recommend the best services for your needs.
                 </p>
             </div>
             
-            <div class="bg-white rounded-xl shadow-2xl p-8 fade-in transform transition-all duration-300 hover:shadow-2xl">
+            <div class="bg-white rounded-lg shadow-2xl p-8 fade-in">
                 <div class="mb-6">
                     <label for="problem-description" class="block text-lg font-semibold text-gray-900 mb-2">
                         Describe Your Problem:
@@ -635,36 +246,31 @@
                     <textarea 
                         id="problem-description" 
                         rows="4" 
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none input-focus-effect"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                         placeholder="Example: I have water leaking through my roof during heavy rain, and I notice some paint peeling on the exterior walls..."
                     ></textarea>
                 </div>
                 
                 <button 
                     id="get-recommendation" 
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg font-semibold transition-all btn-hover-effect"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg font-semibold transition-colors mb-6"
                 >
-                    <i class="fas fa-robot mr-2"></i> Get AI Recommendation
+                    Get AI Recommendation
                 </button>
                 
-                <div id="recommendation-result" class="hidden mt-8">
+                <div id="recommendation-result" class="hidden">
                     <div class="border-t pt-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">AI Recommendation:</h3>
-                        <div id="recommended-services" class="mb-6 flex flex-wrap gap-2"></div>
-                        <div id="recommendation-reason" class="bg-blue-50 p-4 rounded-lg text-gray-700"></div>
+                        <div id="recommended-services" class="mb-4"></div>
+                        <div id="recommendation-reason" class="text-gray-700"></div>
                     </div>
                 </div>
                 
-                <div id="ai-thinking" class="hidden text-center py-8">
-                    <div class="ai-thinking inline-block mb-4">
-                        <i class="fas fa-robot text-5xl text-blue-600 floating"></i>
+                <div id="ai-thinking" class="hidden text-center py-4">
+                    <div class="ai-thinking inline-block">
+                        <i class="fas fa-robot text-3xl text-blue-600"></i>
                     </div>
-                    <p class="text-gray-600">Our AI is analyzing your problem to provide the best solution...</p>
-                    <div class="flex justify-center mt-4 space-x-2">
-                        <div class="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0s"></div>
-                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
-                        <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
-                    </div>
+                    <p class="text-gray-600 mt-2">AI is analyzing your problem...</p>
                 </div>
             </div>
         </div>
@@ -675,97 +281,19 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <span class="text-blue-600 font-semibold mb-2 inline-block">OUR STORY</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About QuickPro Waterproof</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About QuickPro Waterproof</h2>
                     <p class="text-lg text-gray-700 mb-6">
-                        Founded in 2010, QuickPro Waterproof has grown from a small local contractor to one of Pretoria's most trusted waterproofing and construction companies. Our journey has been built on a foundation of integrity, quality workmanship, and customer satisfaction.
+                        Founded in 2010, QuickPro Waterproof has established itself as a trusted partner for residential projects in Pretoria. While our company is relatively new, our team brings over 10 years of individual experience in the construction and waterproofing industry.
                     </p>
                     <p class="text-lg text-gray-700 mb-6">
-                        What started as a specialized waterproofing service has expanded to offer comprehensive construction solutions, thanks to our team's dedication and our clients' trust. We've successfully completed hundreds of projects, from residential repairs to large commercial constructions.
+                        We specialize in residential construction and waterproofing services, focusing on quality workmanship and customer satisfaction. Our commitment to using only the highest quality materials and employing skilled professionals has helped us build a strong reputation in the community.
                     </p>
-                    <div class="flex space-x-4">
-                        <div class="bg-blue-100 p-4 rounded-lg">
-                            <i class="fas fa-medal text-2xl text-blue-600 mb-2"></i>
-                            <h3 class="font-semibold text-gray-900">Certified</h3>
-                            <p class="text-sm text-gray-600">Industry certifications</p>
-                        </div>
-                        <div class="bg-blue-100 p-4 rounded-lg">
-                            <i class="fas fa-award text-2xl text-blue-600 mb-2"></i>
-                            <h3 class="font-semibold text-gray-900">Awarded</h3>
-                            <p class="text-sm text-gray-600">Best in service</p>
-                        </div>
-                        <div class="bg-blue-100 p-4 rounded-lg">
-                            <i class="fas fa-shield-alt text-2xl text-blue-600 mb-2"></i>
-                            <h3 class="font-semibold text-gray-900">Insured</h3>
-                            <p class="text-sm text-gray-600">Full coverage</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fade-in relative">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2338&q=80" 
-                         alt="QuickPro Team" 
-                         class="rounded-xl shadow-lg w-full">
-                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl w-2/3 z-10 hidden md:block">
-                        <div class="text-3xl font-bold text-blue-600">15+</div>
-                        <div class="text-gray-700">Years of Trusted Service</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Team Section -->
-            <div class="mt-20">
-                <div class="text-center mb-12 fade-in">
-                    <span class="text-blue-600 font-semibold mb-2 inline-block">OUR TEAM</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Experts</h2>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Our skilled professionals bring years of experience and dedication to every project.
+                    <p class="text-lg text-gray-700">
+                        From small residential repairs to complete home constructions, we approach every job with dedication and attention to detail. Your satisfaction is our guarantee.
                     </p>
                 </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                             alt="John Smith" 
-                             class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900">John Smith</h3>
-                            <p class="text-blue-600 mb-2">Founder & CEO</p>
-                            <p class="text-gray-600">25+ years in waterproofing and construction</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                             alt="Sarah Johnson" 
-                             class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900">Sarah Johnson</h3>
-                            <p class="text-blue-600 mb-2">Project Manager</p>
-                            <p class="text-gray-600">Specializes in large-scale construction projects</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                             alt="Michael Brown" 
-                             class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900">Michael Brown</h3>
-                            <p class="text-blue-600 mb-2">Waterproofing Specialist</p>
-                            <p class="text-gray-600">Expert in all types of waterproofing solutions</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                             alt="David Wilson" 
-                             class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900">David Wilson</h3>
-                            <p class="text-blue-600 mb-2">Lead Painter</p>
-                            <p class="text-gray-600">Master of interior and exterior painting techniques</p>
-                        </div>
-                    </div>
+                <div class="fade-in">
+                    <img src="south-african-construction-team.jpg" alt="QuickPro Team" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
@@ -775,68 +303,42 @@
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <span class="text-blue-600 font-semibold mb-2 inline-block">GET IN TOUCH</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Contact Us</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Ready to start your project? Get in touch with us today for a free consultation and quote.
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to start your project? Get in touch with us today.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="fade-in">
-                    <div class="bg-gray-50 rounded-xl p-8 h-full">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-lg">
-                                    <i class="fas fa-phone text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Phone</h3>
-                                    <p class="text-gray-600">+27 71 574 3904</p>
-                                    <p class="text-gray-500 text-sm">Mon-Fri, 8:00am-5:00pm</p>
-                                </div>
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-600 p-3 rounded-full">
+                                <i class="fas fa-phone text-white text-xl"></i>
                             </div>
-                            
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-lg">
-                                    <i class="fas fa-envelope text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Email</h3>
-                                    <p class="text-gray-600">contact@quickpro.co.za</p>
-                                    <p class="text-gray-500 text-sm">Response within 24 hours</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-lg">
-                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Location</h3>
-                                    <p class="text-gray-600">123 Construction St, Pretoria</p>
-                                    <p class="text-gray-500 text-sm">South Africa</p>
-                                </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Phone</h3>
+                                <p class="text-gray-600">+27 71 574 3904</p>
                             </div>
                         </div>
                         
-                        <div class="mt-8">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-600 p-3 rounded-full">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Email</h3>
+                                <p class="text-gray-600">contact@quickpro.co.za</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-600 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Location</h3>
+                                <p class="text-gray-600">62 Blake Street, Pretoria, Gauteng, South Africa</p>
                             </div>
                         </div>
                     </div>
@@ -844,46 +346,27 @@
                 
                 <div class="fade-in">
                     <form class="space-y-6" id="contact-form">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                                <input type="text" id="name" name="name" required 
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent input-focus-effect">
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                                <input type="email" id="email" name="email" required 
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent input-focus-effect">
-                            </div>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
                         
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                            <input type="tel" id="phone" name="phone" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent input-focus-effect">
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
                         
                         <div>
-                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
-                            <select id="service" name="service" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent input-focus-effect">
-                                <option value="">Select a service</option>
-                                <option value="Waterproofing">Waterproofing</option>
-                                <option value="Painting">Painting</option>
-                                <option value="Roof Repairs">Roof Repairs</option>
-                                <option value="Construction">Complete Construction</option>
-                                <option value="Other">Other</option>
-                            </select>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
                         </div>
                         
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                            <textarea id="message" name="message" rows="4" required 
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none input-focus-effect"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg font-semibold transition-all btn-hover-effect">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg font-semibold transition-colors">
                             Send Message
                         </button>
                     </form>
@@ -892,83 +375,36 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <div class="h-96 w-full">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14373.64800668241!2d28.229249!3d-25.7473385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95618a4d2f1f4f%3A0x9031d26e3581b115!2sPretoria!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"></iframe>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="p-2 bg-blue-600 rounded-lg">
-                            <i class="fas fa-hard-hat text-xl text-white"></i>
-                        </div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-hard-hat text-2xl text-blue-400"></i>
                         <span class="text-xl font-bold">QuickPro Waterproof</span>
                     </div>
-                    <p class="text-gray-400 mb-4">
-                        Your trusted partner in waterproofing and construction services throughout Pretoria.
+                    <p class="text-gray-400">
+                        Your trusted partner in waterproofing and residential construction services in Pretoria.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> +27 71 574 3904</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contact@quickpro.co.za</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> 62 Blake Street, Pretoria</p>
                     </div>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Waterproofing</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Painting</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Roof Repairs</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Ceiling Replacements</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Epoxy Flooring</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
-                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <div class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt mt-1"></i>
-                            <p>123 Construction St, Pretoria, South Africa</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone"></i>
-                            <p>+27 71 574 3904</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-envelope"></i>
-                            <p>contact@quickpro.co.za</p>
-                        </div>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Waterproofing</p>
+                        <p>Residential Construction</p>
+                        <p>Roof Repairs</p>
+                        <p>Painting</p>
                     </div>
                 </div>
             </div>
@@ -980,26 +416,25 @@
     </footer>
 
     <script>
+        // Services data
+        const services = [
+            'Painting', 'Ceiling Replacements', 'High Pressure Cleaning', 'Roof Painting',
+            'Waterproofing', 'Roof Repairs', 'Replacements', 'Epoxy Floor Coatings',
+            'Residential Construction', 'Plumbing', 'Service Supply'
+        ];
+
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMobileMenu = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            mobileMenu.classList.toggle('active');
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
             });
         });
 
@@ -1008,10 +443,8 @@
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
                 header.style.backgroundColor = 'rgba(17, 24, 39, 0.95)';
-                header.style.backdropFilter = 'blur(12px)';
             } else {
                 header.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                header.style.backdropFilter = 'blur(12px)';
             }
         });
 
@@ -1033,38 +466,6 @@
             observer.observe(el);
         });
 
-        // Counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('[data-count]');
-            const speed = 200;
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Start counters when section is in view
-        const counterSection = document.querySelector('.bg-white');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counterObserver.observe(counterSection);
-
         // AI Assistant functionality
         const getRecommendationBtn = document.getElementById('get-recommendation');
         const problemDescription = document.getElementById('problem-description');
@@ -1078,17 +479,17 @@
             const lowerDescription = description.toLowerCase();
             const recommendations = [];
             const keywords = {
-                'Waterproofing': ['water', 'leak', 'damp', 'moisture', 'wet', 'waterproof', 'seep', 'drip', 'rain'],
-                'Painting': ['paint', 'color', 'wall', 'exterior', 'interior', 'peel', 'fade', 'coat', 'brush'],
-                'Roof Repairs': ['roof', 'tile', 'gutter', 'shingle', 'leak', 'damage', 'broken', 'hole', 'shingle'],
-                'Roof Painting': ['roof', 'paint', 'coating', 'color', 'fade', 'weather', 'protective'],
-                'High Pressure Cleaning': ['clean', 'dirt', 'stain', 'pressure', 'wash', 'mold', 'mildew', 'grime', 'algae'],
-                'Ceiling Replacements': ['ceiling', 'replace', 'damage', 'drop', 'crack', 'stain', 'water', 'plaster'],
-                'Epoxy Floor Coatings': ['floor', 'epoxy', 'coating', 'warehouse', 'garage', 'durable', 'shine', 'protective'],
-                'Complete Construction': ['build', 'construct', 'new', 'addition', 'extension', 'remodel', 'renovate', 'house'],
-                'Plumbing': ['pipe', 'drain', 'water', 'plumb', 'tap', 'toilet', 'sink', 'leak', 'block'],
-                'Replacements': ['replace', 'old', 'broken', 'damaged', 'worn', 'outdated', 'update'],
-                'Service Supply': ['supply', 'material', 'equipment', 'deliver', 'provide', 'product']
+                'waterproofing': ['water', 'leak', 'damp', 'moisture', 'wet', 'waterproof'],
+                'painting': ['paint', 'color', 'wall', 'exterior', 'interior', 'peel'],
+                'roof repairs': ['roof', 'tile', 'gutter', 'shingle', 'leak'],
+                'roof painting': ['roof', 'paint', 'coating', 'color'],
+                'high pressure cleaning': ['clean', 'dirt', 'stain', 'pressure', 'wash'],
+                'ceiling replacements': ['ceiling', 'replace', 'damage', 'drop'],
+                'epoxy floor coatings': ['floor', 'epoxy', 'coating', 'warehouse', 'garage'],
+                'residential construction': ['build', 'construct', 'new', 'home', 'house'],
+                'plumbing': ['pipe', 'drain', 'water', 'plumb', 'tap', 'toilet'],
+                'replacements': ['replace', 'old', 'broken', 'damaged'],
+                'service supply': ['supply', 'material', 'equipment', 'deliver']
             };
 
             // Analyze description for relevant services
@@ -1108,13 +509,13 @@
             
             if (recommendations.length === 0) {
                 return {
-                    services: ['Complete Construction'],
-                    reason: 'Based on your description, we recommend starting with a consultation for complete construction services to assess your specific needs.'
+                    services: ['Residential Construction'],
+                    reason: 'Based on your description, we recommend starting with a consultation for residential construction services to assess your specific needs.'
                 };
             }
 
             const topServices = recommendations.slice(0, 3).map(r => r.service);
-            const mainKeywords = recommendations[0].matchedKeywords.slice(0, 3).join(', ');
+            const mainKeywords = recommendations[0].matchedKeywords.join(', ');
             
             return {
                 services: topServices,
@@ -1141,11 +542,11 @@
                 
                 // Display recommended services
                 recommendedServices.innerHTML = result.services.map(service => 
-                    `<span class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">${service}</span>`
+                    `<span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">${service}</span>`
                 ).join('');
                 
                 // Display reason
-                recommendationReason.textContent = result.reason;
+                recommendationReason.innerHTML = `<strong>Why these services:</strong> ${result.reason}`;
                 
                 // Show results
                 aiThinking.classList.add('hidden');
@@ -1163,9 +564,11 @@
             const formData = new FormData(contactForm);
             const name = formData.get('name');
             const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
             
             // Simulate form submission
-            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email}.`);
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${phone || email}.`);
             
             // Reset form
             contactForm.reset();
